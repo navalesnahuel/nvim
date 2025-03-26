@@ -16,6 +16,24 @@ return {
 		gitbrowse = { enabled = true },
 	},
 	keys = {
+		-- LSP
+		{
+			"gi",
+			function()
+				vim.cmd("vsplit")
+				vim.cmd("wincmd l") -- This moves the cursor to the right split
+				Snacks.picker.lsp_implementations()
+			end,
+			desc = "Goto Implementation",
+		},
+		{
+			"<leader>ss",
+			function()
+				Snacks.picker.lsp_symbols()
+			end,
+			desc = "LSP Symbols",
+		},
+
 		-- Git
 		{
 			"<leader>gB",

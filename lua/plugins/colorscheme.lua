@@ -24,8 +24,8 @@ return {
 			-- Define custom highlight groups
 			custom_highlights = function(colors)
 				return {
-					["@comment"] = { fg = colors.teal, style = { "italic" } }, -- Apply italic and bold to regular comments
-					["@comment.documentation"] = { fg = colors.teal, style = { "italic" } }, -- Apply italic to documentation comments
+					["@comment"] = { fg = colors.teal, style = {} }, -- Apply italic and bold to regular comments
+					["@comment.documentation"] = { fg = colors.teal, style = {} }, -- Apply italic to documentation comments
 				}
 			end,
 		})
