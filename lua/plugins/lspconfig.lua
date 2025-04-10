@@ -43,8 +43,22 @@ return {
 			})
 
 			-- Go Server
+
 			require("lspconfig").gopls.setup({
 				on_attach = on_attach,
+				capabilities = capabilities,
+				settings = {
+					gopls = {
+						analyses = {
+							unusedparams = true,
+							nilness = true,
+							unusedwrite = true,
+							useany = true,
+						},
+						staticcheck = true,
+						gofumpt = true,
+					},
+				},
 			})
 
 			-- Python Server

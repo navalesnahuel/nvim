@@ -2,10 +2,12 @@ return {
 	"nvim-lualine/lualine.nvim",
 	dependencies = { "nvim-tree/nvim-web-devicons" }, -- Para íconos
 	config = function()
+		require("mini.icons").setup()
+		MiniIcons.mock_nvim_web_devicons()
 		require("lualine").setup({
 			options = {
 				icons_enabled = true,
-				theme = "auto",
+				theme = "gruvbox-material",
 				section_separators = { left = "", right = "" },
 				component_separators = { left = "", right = "" },
 				globalstatus = true,
@@ -25,7 +27,7 @@ return {
 				lualine_c = {
 					{
 						"filename",
-						path = 1, -- 0: Just the filename
+						path = 0, -- 0: Just the filename
 						shorting_target = 40, -- Shortens path to leave 40 spaces in the window
 						symbols = {
 							modified = "[+]", -- Text to show when the file is modified.
@@ -35,7 +37,7 @@ return {
 						},
 					},
 				},
-				lualine_x = { "encoding", "fileformat", "filetype" },
+				lualine_x = { "filetype", "encoding" },
 				lualine_y = { "progress" },
 				lualine_z = { "location" },
 			},
